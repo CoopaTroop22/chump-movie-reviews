@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detailed Review - CHUMP Movie Reviews</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your main stylesheet -->
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <img src="chump-logo.gif" alt="CHUMP Logo">
+                <h1>CHUMP Movie Reviews</h1>
+            </div>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">Reviews</a>
+                <a href="#">Top 10</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <img src="images/sparkle.gif" alt="Sparkle" class="sparkle">
+            </nav>
+            <div class="banner-ad">[Ad space for retro banner]</div>
+        </header>
+
+
+        <main>
+            <article class="detailed-review">
+                <h2 id="movie-title">Movie Title</h2>
+                <p><strong>Rating:</strong> 
+                    <div class="rating" id="rating"></div>
+                </p>
+                <img src="images/fantastic-four-poster.webp" alt="Movie Poster">
+                <i>This review may contain spoilers.</i>
+                <p id="review-content">Detailed review content goes here...</p>
+                <a href="index.html" class="back-to-home">Back to Home</a>
+            </article>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 CHUMP Movie Reviews</p>
+        </footer>
+    </div>
+
+    <script>
+        function generateStars(rating) {
+            const fullStars = Math.floor(rating);
+            const hasHalfStar = !Number.isInteger(rating);
+            const totalStars = 5;
+
+            let starsHtml = '';
+
+            for (let i = 0; i < totalStars; i++) {
+                if (i < fullStars) {
+                    starsHtml += '<span class="star full">&#9733;</span>'; // Full star
+                } else if (i === fullStars && hasHalfStar) {
+                    starsHtml += '<span class="star half">&#9733;</span>'; // Half star
+                } else {
+                    starsHtml += '<span class="star empty">&#9733;</span>'; // Empty star
+                }
+            }
+            
+            return starsHtml;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const ratingValue = 3.5; // Example rating value
+            const movieTitle = "Fantastic Four (2005)"; // Example movie title
+            const reviewContent = "After watching this movie for the second time, I soon remembered how much I liked this somewhat unpopular marvel movie. The movie follows the 5 main characters realising their strange new abilities, after an incident in space, with Victor Von Doom soon becoming the well-know marvel villain Dr. Doom, as well as the many arguments between the fantastic four with them only starting to bond and actually like each other towards the end of the movie. Sure the acting isn't amazing by any means, but in my opinion the humour was great and the story line was solid enough to enjoy the movie";
+
+            document.getElementById('rating').innerHTML = generateStars(ratingValue);
+            document.getElementById('movie-title').textContent = movieTitle;
+            document.getElementById('review-content').textContent = reviewContent;
+        });
+    </script>
+</body>
+</html>
