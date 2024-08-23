@@ -60,6 +60,33 @@ nav a:hover {
     color: #002266;
 }
 
+.search-bar {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.search-bar input[type="text"] {
+    padding: 5px;
+    width: 200px;
+    font-size: 1em;
+    border: 2px solid #003399;
+    border-radius: 5px;
+}
+
+.search-bar button {
+    padding: 5px 10px;
+    background-color: #003399;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.search-bar button:hover {
+    background-color: #002266;
+}
+
 .sparkle {
     position: absolute;
     top: -1px;
@@ -136,115 +163,107 @@ main {
     flex-grow: 1;
 }
 
+/* Featured Reviews Section */
+.featured-reviews {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #e6e6ff;
+    border: 2px solid #003399;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.featured-reviews h2 {
+    margin-bottom: 15px;
+    color: #003399;
+}
+
 /* Review section adjustments */
 article {
     background-color: #ffffff;
     border: 3px solid #003399;
     padding: 15px;
     margin-bottom: 20px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
-    position: relative;
-    overflow: hidden; /* Ensures the float is cleared */
-}
-
-article img {
-    width: 150px; /* Fixed width for all images */
-    height: auto; /* Maintain aspect ratio */
-    float: left;
-    margin-right: 15px;
-    margin-bottom: 10px;
-    border: 3px solid #003399;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 article h2 {
-    font-family: 'Tahoma', sans-serif;
-    font-size: 2em;
-    color: #003399;
+    font-size: 1.8em;
     margin-bottom: 10px;
-    border-bottom: 2px solid #002266;
+    color: #003399;
+}
+
+article img {
+    float: left;
+    margin-right: 20px;
+    width: 150px;
+    height: 225px;
+    border: 3px solid #003399;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
 }
 
 article p {
-    font-size: 1.1em;
-    line-height: 1.5;
-    margin-bottom: 10px;
+    text-align: justify;
+    line-height: 1.5em;
 }
 
-.read-more {
+article a.read-more {
     display: inline-block;
-    padding: 10px 15px;
-    background: linear-gradient(to bottom, #003399, #001a66);
-    color: #fff;
-    text-decoration: none;
-    border: 3px solid #000066;
-    border-radius: 10px;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
-    font-weight: bold;
-    transition: background 0.3s;
-}
-
-.read-more:hover {
-    background: linear-gradient(to bottom, #001a66, #000033);
-}
-
-footer {
-    clear: both;
+    margin-top: 15px;
+    padding: 10px 20px;
     background-color: #003399;
-    color: #fff;
-    padding: 15px;
-    text-align: center;
-    font-family: 'Verdana', sans-serif;
-    border-top: 3px solid #002266;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.5);
-    font-size: 0.9em;
-}
-
-footer a {
-    color: #ffcc00;
+    color: white;
     text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
 }
 
-footer a:hover {
+article a.read-more:hover {
+    background-color: #002266;
+}
+
+/* Related Reviews */
+.related-reviews ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.related-reviews ul li {
+    margin-bottom: 5px;
+}
+
+.related-reviews ul li a {
+    text-decoration: none;
+    color: #003399;
+}
+
+.related-reviews ul li a:hover {
     text-decoration: underline;
 }
 
-.clearfix::after {
-    content: "";
-    display: table;
-    clear: both;
+/* Footer Enhancements */
+footer {
+    background-color: #003399;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-top: 3px solid #002266;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.5);
+    margin-top: 20px;
 }
 
-/* Star Rating Styles */
-.rating {
-    display: inline-block;
-    font-size: 2em; /* Adjust size as needed */
-    color: #ffd700; /* Gold color for stars */
+.footer-links {
+    margin-bottom: 10px;
 }
 
-.star {
-    display: inline-block;
-    font-size: inherit; /* Inherit font size from parent */
-    color: #ddd; /* Default color for empty stars */
+.footer-links a {
+    color: #ffcc00;
+    text-decoration: none;
+    margin: 0 10px;
 }
 
-.star.full {
-    color: #ffd700; /* Color for full stars */
-}
-
-.star.half {
-    position: relative;
-}
-
-.star.half::before {
-    content: '\2605'; /* Unicode star character */
-    position: absolute;
-    left: 0;
-    color: #ffd700; /* Color for the half star */
-    width: 50%;
-    overflow: hidden;
-}
-
-.star.empty {
-    color: #ddd; /* Color for empty stars */
+.social-media img {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
 }
