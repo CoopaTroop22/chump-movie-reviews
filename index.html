@@ -1,104 +1,63 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CHUMP Movie Reviews</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
 <body>
     <div class="container">
         <header>
-            <div class="logo-container">
-                <img src="chump-logo.gif" alt="CHUMP Logo">
-                <h1>CHUMP Movie Reviews</h1>
+            <!-- Logo, nav, and banner as before -->
+            <div class="search-bar">
+                <input type="text" placeholder="Search reviews...">
+                <button type="button">Search</button>
             </div>
-            <nav>
-                <a href="#">Home</a>
-                <a href="#">Reviews</a>
-                <a href="#">Top 10</a>
-                <a href="#">About</a>
-                <a href="#">Contact</a>
-            </nav>
-            <div class="banner-ad">[Ad space for retro banner]</div>
         </header>
 
         <div class="content-wrapper">
             <aside class="sidebar">
+                <!-- Existing widgets -->
                 <div class="widget">
-                    <h3>Popular Reviews</h3>
-                    <ul>
-                        <li><a href="#">Inception</a></li>
-                        <li><a href="#">The Dark Knight</a></li>
-                        <li><a href="#">Toy Story 3</a></li>
-                        <li><a href="#">Shutter Island</a></li>
-                    </ul>
+                    <h3>Random Review</h3>
+                    <p><a href="#">Review of a Random Movie</a></p>
                 </div>
                 <div class="widget">
-                    <h3>Categories</h3>
-                    <ul>
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Drama</a></li>
-                        <li><a href="#">Comedy</a></li>
-                        <li><a href="#">Sci-Fi</a></li>
-                    </ul>
-                </div>
-                <div class="widget">
-                    <h3>Flashy Widget!</h3>
-                    <p>This is an example of more clutter! Maybe some scrolling text or an animated gif would go here.</p>
+                    <h3>Poll</h3>
+                    <form>
+                        <p>Which is the best 2000s movie?</p>
+                        <input type="radio" name="poll" value="Inception"> Inception<br>
+                        <input type="radio" name="poll" value="The Dark Knight"> The Dark Knight<br>
+                        <button type="submit">Vote</button>
+                    </form>
                 </div>
             </aside>
 
             <main>
+                <section class="featured-reviews">
+                    <h2>Featured Reviews</h2>
+                    <!-- Featured reviews go here -->
+                </section>
+
                 <article class="clearfix">
-                    <h2>Fantastic Four (2005)</h2>
-                    <p><strong>Rating:</strong> 
-                        <div class="rating" data-rating="3.5"></div>
-                    </p>
-                    <img src="fantastic-four-poster.jpg" alt="Fantastic Four Poster">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula nisl et nibh efficitur...</p>
-                    <a href="fantasticfour-review1.html" class="read-more">Read More</a>
+                    <!-- Existing review format -->
                 </article>
-                         
+
+                <section class="related-reviews">
+                    <h2>Related Reviews</h2>
+                    <ul>
+                        <li><a href="#">Related Movie 1</a></li>
+                        <li><a href="#">Related Movie 2</a></li>
+                    </ul>
+                </section>
             </main>
         </div>
 
         <footer>
             <p>&copy; 2024 CHUMP Movie Reviews. All rights reserved.</p>
-            <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a> | 
+                <a href="#">Terms of Service</a> | 
+                <a href="#">Subscribe</a>
+            </div>
+            <div class="social-media">
+                <a href="#"><img src="icon-twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="icon-facebook.png" alt="Facebook"></a>
+            </div>
         </footer>
-    </div>    
-    
-    <script>
-        function generateStars(rating) {
-            const fullStars = Math.floor(rating);
-            const hasHalfStar = !Number.isInteger(rating);
-            const totalStars = 5; // Total number of stars to display
-            
-            let starsHtml = '';
-    
-            for (let i = 0; i < totalStars; i++) {
-                if (i < fullStars) {
-                    starsHtml += '<span class="star full">&#9733;</span>'; // Full star
-                } else if (i === fullStars && hasHalfStar) {
-                    starsHtml += '<span class="star half">&#9733;</span>'; // Half star
-                } else {
-                    starsHtml += '<span class="star empty">&#9733;</span>'; // Empty star
-                }
-            }
-            
-            return starsHtml;
-        }
-    
-        document.addEventListener('DOMContentLoaded', () => {
-            const ratings = document.querySelectorAll('.rating');
-            
-            ratings.forEach(ratingElement => {
-                const ratingValue = parseFloat(ratingElement.getAttribute('data-rating'));
-                ratingElement.innerHTML = generateStars(ratingValue);
-            });
-        });
-    </script>
-    
+    </div>
 </body>
-</html>
+
